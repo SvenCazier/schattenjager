@@ -1,0 +1,89 @@
+body {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+}
+
+#settings {
+	grid-column: 5 / span 4;
+	display: grid;
+}
+#settings h1 {
+	text-align: center;
+}
+#settings form {
+	display: grid;
+}
+#settings form article {
+	margin-bottom: 1.5em;
+}
+#settings form article label {
+	display: block;
+}
+#settings form article select {
+	width: 100%;
+	height: 2.5em;
+}
+#settings form article button {
+	justify-self: end;
+}
+
+#gameUI {
+	grid-column: 2 / span 10;
+	display: grid;
+	grid-template-areas: "main main main aside aside";
+}
+#gameUI main {
+	grid-area: main;
+}
+#gameUI main table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+#gameUI main table td {
+	position: relative;
+	height: 1em;
+	width: 1em;
+}
+#gameUI main table .grass {
+	background: lightgreen;
+}
+#gameUI main table .wall {
+	background: darkred;
+}
+#gameUI main table .treasure {
+	background: gold;
+}
+#gameUI main table .player {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	height: 100%;
+	width: 100%;
+}
+#gameUI main table .computer {
+	background: red;
+	z-index: 1;
+}
+#gameUI main table .human {
+	background: darkgreen;
+}
+#gameUI aside {
+	grid-area: aside;
+	display: flex;
+	flex-direction: column;
+}
+#gameUI aside article {
+	display: flex;
+	flex-direction: column;
+}
+#gameUI aside article:last-of-type {
+	flex: 1;
+}
+#gameUI aside article output {
+	background: black;
+	color: white;
+	overflow-y: scroll;
+	flex: 1;
+}
